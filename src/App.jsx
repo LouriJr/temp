@@ -1,25 +1,35 @@
-import ProfileCard from "./components/ProfileCard/ProfileCard";
-import styles from "./App.module.css";
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
 
 function App() {
+  const [count, setCount] = useState(0)
+
   return (
-    <div className={styles.container}>
-      <h1>Lista de Perfis</h1>
-      <ProfileCard
-        nome="Erick"
-        idade="28"
-        profissao="Professor"
-        foto="https://istoedinheiro.com.br/wp-content/uploads/sites/17/2022/12/snapinstaapp-1080-320489457-195090603100868-7252177604779913634-n-e1671561984301.jpg"
-      />
-      <ProfileCard
-        nome="Ana"
-        idade="22"
-        profissao="Designer"
-        foto="https://istoedinheiro.com.br/wp-content/uploads/sites/17/2025/11/mega-sena-1112203505-0-768x432-1.jpeg"
-      />
-      <ProfileCard nome="Roberto" idade="24" profissao="Mecanico" foto="" />
-    </div>
-  );
+    <>
+      <div>
+        <a href="https://vite.dev" target="_blank">
+          <img src={viteLogo} className="logo" alt="Vite logo" />
+        </a>
+        <a href="https://react.dev" target="_blank">
+          <img src={reactLogo} className="logo react" alt="React logo" />
+        </a>
+      </div>
+      <h1>Vite + React</h1>
+      <div className="card">
+        <button onClick={() => setCount((count) => count + 1)}>
+          count is {count}
+        </button>
+        <p>
+          Edit <code>src/App.jsx</code> and save to test HMR
+        </p>
+      </div>
+      <p className="read-the-docs">
+        Click on the Vite and React logos to learn more
+      </p>
+    </>
+  )
 }
 
-export default App;
+export default App
